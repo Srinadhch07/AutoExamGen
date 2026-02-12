@@ -1,0 +1,96 @@
+import json
+import uuid
+from fastapi import APIRouter
+from fastapi import BackgroundTasks
+from uuid import uuid4
+from datetime import datetime
+from bson import ObjectId
+import logging
+
+from app.agents.v1.langgraph.exam_generation_graph import exam_generation_graph
+from app.config.database import exams_collection, exam_results_collection
+from app.schemas.exam_schema import ExamCreate, EvaluateExamRequest
+from app.utils.generate_ai_response import generate_ai_suggestions
+from app.helpers.helpers import serialize_doc
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
+router = APIRouter(prefix="/exam")
+
+@router.post("/generate", summary="Exam generation API",   description="Queues exam generation and returns Celery task ID",operation_id="generate_exam_api")
+async def generate_exam(payload: ExamCreate):
+    questions = []
+    answer_key = {}
+    result = await exam_generation_graph.ainvoke(payload)
+    questions_raw = result["questions"]
+    if isinstance(questions_raw, str):
+        questions_raw = json.loads(questions_raw)
+    for q in questions_raw:
+        qid = str(uuid.uuid4())
+        answer_key[qid] = q["answer"]
+        questions.append({
+            "qid": qid,
+            "question": q["question"],
+            "options": q["options"]
+        })
+    exam_doc = {
+        "subject": payload.subject,
+        "difficulty": payload.difficulty,
+        "questions": questions,
+        "answer_key": answer_key,
+        "created_at": datetime.utcnow()
+    }
+    exam_docs = await exams_collection.insert_one(exam_doc)
+    return { "status": True, "message": "Exam questions are ready.", "data": { "examId": str(exam_docs.inserted_id), "questions": questions}}
+
+@router.post("/evaluate", summary="Exam evaluation API")
+async def evaluate_exam(payload:EvaluateExamRequest, background_tasks: BackgroundTasks):
+    examId = payload.examId
+    student_answers = {item.qId : item.answer for item in payload.responses}
+    exam_doc = await exams_collection.find_one( {"_id": ObjectId(examId)}, {"questions":1, "answer_key": 1})
+    answer_sheet_key = exam_doc.get("answer_key") if exam_doc else None
+    questions = exam_doc.get("questions") if exam_doc else None
+
+    exam_evaluation = []
+    total_questions = len(answer_sheet_key)
+    attempted = sum(1 for ans in student_answers.values() if str(ans).strip()  not in (None, "N/A", "", "-"))
+    correct_answer_count = 0
+    unattempted = total_questions - attempted
+    suggestion_needed = []
+
+    for index, (qid, correct_answer) in enumerate(answer_sheet_key.items(), start = 0):
+        student_answer = student_answers.get(qid)
+        if student_answer is None:
+            message  = "Not answered"
+            meta_data = questions[index]
+            question = meta_data.get("question")
+            suggestion_needed.append([qid, question, correct_answer])
+        elif student_answer == correct_answer:
+            correct_answer_count += 1
+            message  = "Correct"
+        else:
+            message = "Incorrect"
+            meta_data = questions[index]
+            question = meta_data.get("question")
+            suggestion_needed.append([qid, question, correct_answer])
+        exam_evaluation.append({
+            "question":qid,
+            "isCorrect": str(student_answer) == str(correct_answer),
+            "student_answer": student_answer,
+            "correct_answer": correct_answer,
+            "message": message
+        })
+    accuracy = correct_answer_count/total_questions
+    background_tasks.add_task( generate_ai_suggestions, examId, suggestion_needed)   
+    result = {
+        "examId": examId,
+        "total_question": total_questions, 
+        "attempted": attempted, 
+        "unattempted": unattempted,
+        "accuracy": accuracy,
+        "score": correct_answer_count,
+        "evaluation": exam_evaluation
+    }
+    await exam_results_collection.insert_one(result)
+    return { "status": True, "message": "Exam Evaluation successful", "data": serialize_doc(result)}

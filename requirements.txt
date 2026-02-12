@@ -1,0 +1,14 @@
+python-dotenv
+fastapi
+uvicorn
+celery
+redis
+flower
+langchain
+langgraph
+langchain-anthropic
+pymongo[async]
+motor[srv]>=3.6.0
+# Temp
+langchain-openai
+ollama
