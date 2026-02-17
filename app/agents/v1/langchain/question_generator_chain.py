@@ -5,5 +5,6 @@ from langchain_core.runnables import RunnableLambda
 import json
 import random
 
-from app.llm_models.v1.ollama_client import generate
+from app.llm_models.v1.ollama_client import generate, generate_long
 question_chain = RunnableLambda(generate)
+long_question_chain = RunnableLambda(generate_long)

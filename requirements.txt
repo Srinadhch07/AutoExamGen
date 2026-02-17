@@ -12,3 +12,5 @@ motor[srv]>=3.6.0
 # Temp
 langchain-openai
 ollama
+transformers
+sentencepiece

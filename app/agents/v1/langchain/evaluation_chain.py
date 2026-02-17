@@ -1,22 +1,9 @@
-from langchain_anthropic import ChatAnthropic
-from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import StrOutputParser
-from app.llm_models.v1 import ollama_client
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import JsonOutputParser
 
-prompt = PromptTemplate.from_template("""
-Compare responses with answer key.
+from app.agents.v1.prompts.prompts import ANSWER_EVALUATOR_PROMPT, ANSWER_EVALUATOR_SYSTEM_PROMPT
+from app.llm_models.v1.ollama_client import ollama_runnable
+json_parser = JsonOutputParser()
 
-Responses:
-{responses}
-
-Answer Key:
-{answer_key}
-
-Return JSON:
-{{
-  "score": number,
-  "wrong_questions": []
-}}
-""")
-
-evaluation_chain = prompt | ollama_client | StrOutputParser()
+evaluation_prompt = ChatPromptTemplate.from_messages([ ("system", ANSWER_EVALUATOR_SYSTEM_PROMPT), ("user", ANSWER_EVALUATOR_PROMPT)])
+evaluation_chain = ( evaluation_prompt | ollama_runnable | json_parser)
