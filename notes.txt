@@ -1,2 +1,42 @@
-Explain the correct answer briefly and give learning suggestion for the student.
-Return structured JSON.
+Prompt architecture:
+{
+  "exam_name": "Placement Test 1",
+  "subject": "Computer Science",
+  "themes": [
+    {
+      "theme": "HR",
+      "type": "mcq",
+      "difficulty": "easy",
+      "count": 5
+    },
+    {
+      "theme": "Aptitude",
+      "type": "mcq",
+      "difficulty": "medium",
+      "count": 10
+    },
+    {
+      "theme": "Coding",
+      "type": "long",
+      "difficulty": "hard",
+      "count": 3
+    }
+  ]
+}
+Database architecture:
+{
+  "_id": ObjectId,
+  "exam_name": "Placement Test 1",
+  "subject": "Computer Science",
+  "sections": [
+    {
+      "theme": "HR",
+      "type": "mcq",
+      "difficulty": "easy",
+      "questions": [...]
+    }
+  ],
+  "total_questions": 18,
+  "created_at": ISODate(),
+  "version": 1
+}

@@ -1,10 +1,17 @@
 from pydantic import BaseModel, EmailStr, Field, constr, validator
-from typing import Optional, List
+from typing import Optional, List, Literal
+
+class ThemeConfig(BaseModel):
+    theme: str = Field(..., example="HR")
+    type: Literal["mcq", "long", "short"] = Field(..., example="mcq")
+    difficulty: Literal["easy", "medium", "hard"] = Field(..., example="easy")
+    count: int = Field(..., ge=1, example=1)
+
 
 class ExamCreate(BaseModel):
-    subject: Optional[str] = "python programming language"
-    difficulty: Optional[str] = "easy"
-    num_questions: Optional[int] = 2
+    exam_name: str = Field(..., example="Placement Test 1")
+    subject: str = Field(..., example="Computer Science")
+    themes: List[ThemeConfig]
 
 class EvaluateExamItem(BaseModel):
     qId:str

@@ -7,7 +7,8 @@ from datetime import datetime
 from bson import ObjectId
 import logging
 
-from app.agents.v1.langgraph.exam_generation_graph import exam_generation_graph,generate_long_questions_graph
+from app.agents.v2.langgraph.exam_generator_graph import graph as exam_generation_graph
+from app.agents.v1.langgraph.exam_generation_graph import generate_long_questions_graph
 from app.tasks.evaluation_tasks import evaluate_long_exam
 from app.config.database import exams_collection, exam_results_collection
 from app.schemas.exam_schema import ExamCreate, EvaluateExamRequest
@@ -21,32 +22,26 @@ router = APIRouter(prefix="/exam")
 
 @router.post("/generate", summary="Exam generation API",   description="Queues exam generation and returns Celery task ID",operation_id="generate_exam_api")
 async def generate_exam(payload: ExamCreate):
-    questions = []
-    answer_key = {}
-    result = await exam_generation_graph.ainvoke(payload)
-    questions_raw = result["questions"]
-    tokens_count = result["tokens_count"]
-    if isinstance(questions_raw, str):
-        questions_raw = json.loads(questions_raw)
-    for q in questions_raw:
-        qid = str(uuid.uuid4())
-        answer_key[qid] = q["answer"]
-        questions.append({
-            "qid": qid,
-            "question": q["question"],
-            "options": q["options"]
-        })
-    exam_doc = {
-        "subject": payload.subject,
-        "difficulty": payload.difficulty,
-        "questions": questions,
-        "answer_key": answer_key,
-        "token_count": tokens_count,
-        "questions_type": "mcqs", 
-        "created_at": datetime.utcnow()
+    input_data = {
+        "exam_name": "Placement Test 1",
+        "subject": "Computer Science",
+        "themes": [
+            {"theme": "HR", "type": "mcq", "difficulty": "easy", "count": 1},
+            {"theme": "Aptitude", "type": "mcq", "difficulty": "easy", "count": 1},
+            {"theme": "Coding", "type": "long", "difficulty": "easy", "count": 1},
+        ],
     }
-    exam_docs = await exams_collection.insert_one(exam_doc)
-    return { "status": True, "message": "Exam questions are ready.", "data": { "examId": str(exam_docs.inserted_id), "questions": questions}, "tokens_count": tokens_count}
+    payload = {
+        "exam_name": input_data["exam_name"],
+        "subject": input_data["subject"],
+        "themes": input_data["themes"],
+    }
+    result = await exam_generation_graph.ainvoke(payload)
+    exam_doc = result["result"]
+
+    if isinstance(exam_doc, str):
+        exam_doc = json.loads(exam_doc)
+    return { "status": True, "message": "Exam questions are ready.", "data": { "examId":exam_doc["_id"], "Exam infromation": exam_doc} }
 
 @router.post("/generate_long", summary="Exam generation API",   description="Queues exam generation and returns Celery task ID",operation_id="generate_long_exam_api")
 async def generate_long_exam(payload: ExamCreate):

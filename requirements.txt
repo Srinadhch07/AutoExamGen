@@ -14,3 +14,6 @@ langchain-openai
 ollama
 transformers
 sentencepiece
+llama-cpp-python 
+pydantic
+langchain-community
