@@ -10,6 +10,7 @@ from app.routes.user.user_routes.v1.routes import router as pdf_router
 from app.routes.user.user_routes.v2.exam_routes import router as exam_router
 from app.config.database import check_connection
 from app.config.logging import init_logging_system
+from app.transformers.v1 import embeddings
 
 init_logging_system()
 
