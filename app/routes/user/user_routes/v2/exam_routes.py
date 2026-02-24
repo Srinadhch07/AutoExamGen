@@ -128,8 +128,8 @@ async def evaluate_exam(payload:EvaluateExamRequest,  background_tasks: Backgrou
                         score = 0,
                         feedback="Evaluation failed due to system error"
                     )
-                llm_score = result.score
-                feedback = result.feedback
+                llm_score = result["score"]
+                feedback = result["feedback"]
                 if llm_score >= 0.8:
                     message = "correct"
                 elif llm_score >= 0.5:

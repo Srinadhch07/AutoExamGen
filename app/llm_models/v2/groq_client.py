@@ -32,15 +32,11 @@ async def evaluate_answer(model_answer, student_answer):
             {"role": "system", "content": "You are a strict exam evaluator."},
             {"role": "user", "content": prompt}
         ],
-        temperature=0.2,   # IMPORTANT: low but not zero
+        temperature=0.2,
         max_completion_tokens=500,
         top_p=1
     )
-
     response_text = completion.choices[0].message.content.strip()
-
-    print("RAW LLM OUTPUT:", response_text)  # Debug
-
     try:
         result = json.loads(response_text)
         return result

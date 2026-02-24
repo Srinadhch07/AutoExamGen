@@ -1,73 +1,67 @@
-2026-02-23 13:05:20,684 - DEBUG - httpcore.connection - close.started
-2026-02-23 13:05:20,688 - DEBUG - httpcore.connection - close.complete
-2026-02-23 13:07:51,437 - ERROR - app - InvalidId at E:\Backend developer\fastpisetup\.venv\Lib\site-packages\bson\objectid.py:37 : 'string' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
-2026-02-23 13:09:59,412 - ERROR - app - KeyError at E:\Backend developer\fastpisetup\app\routes\user\user_routes\v2\exam_routes.py:57 : 'id'
-2026-02-23 13:10:18,159 - DEBUG - httpcore.connection - close.started
-2026-02-23 13:10:18,166 - DEBUG - httpcore.connection - close.complete
-2026-02-23 13:10:40,352 - DEBUG - httpcore.connection - close.started
-2026-02-23 13:10:40,353 - DEBUG - httpcore.connection - close.complete
-2026-02-23 13:12:50,503 - DEBUG - httpcore.connection - close.started
-2026-02-23 13:12:50,505 - DEBUG - httpcore.connection - close.complete
-2026-02-23 14:05:14,984 - ERROR - app - KeyError at E:\Backend developer\fastpisetup\app\routes\user\user_routes\v2\exam_routes.py:119 : 'Model_answer'
-2026-02-23 14:08:12,533 - DEBUG - httpcore.connection - close.started
-2026-02-23 14:08:12,535 - DEBUG - httpcore.connection - close.complete
-2026-02-23 14:09:01,916 - ERROR - app - ValueError at E:\Backend developer\fastpisetup\.venv\Lib\site-packages\fastapi\encoders.py:335 : [TypeError("'numpy.float32' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
-2026-02-23 14:09:17,901 - DEBUG - httpcore.connection - close.started
-2026-02-23 14:09:17,903 - DEBUG - httpcore.connection - close.complete
-2026-02-23 14:24:46,394 - DEBUG - httpcore.connection - close.started
-2026-02-23 14:24:46,413 - DEBUG - httpcore.connection - close.complete
-2026-02-23 15:21:37,477 - DEBUG - root - AI evaluation started
-2026-02-23 15:23:21,642 - ERROR - app - OutputParserException at E:\Backend developer\fastpisetup\.venv\Lib\site-packages\langchain_core\output_parsers\pydantic.py:35 : Failed to parse GradeOutput from completion null. Got: 1 validation error for GradeOutput
-  Input should be a valid dictionary or instance of GradeOutput [type=model_type, input_value=None, input_type=NoneType]
-    For further information visit https://errors.pydantic.dev/2.12/v/model_type
-For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE 
-2026-02-23 15:27:45,717 - DEBUG - httpcore.connection - close.started
-2026-02-23 15:27:45,758 - DEBUG - httpcore.connection - close.complete
-2026-02-23 16:37:50,464 - DEBUG - httpcore.connection - close.started
-2026-02-23 16:37:50,498 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:01:25,615 - ERROR - app - UnboundLocalError at E:\Backend developer\fastpisetup\app\routes\user\user_routes\v2\exam_routes.py:143 : cannot access local variable 'feedback' where it is not associated with a value
-2026-02-23 17:03:25,995 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:03:25,997 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:08:00,008 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:08:00,009 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:09:35,410 - ERROR - app - UnboundLocalError at E:\Backend developer\fastpisetup\app\routes\user\user_routes\v2\exam_routes.py:143 : cannot access local variable 'feedback' where it is not associated with a value
-2026-02-23 17:11:28,415 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:11:28,420 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:12:41,270 - DEBUG - root - AI evaluation started
-2026-02-23 17:22:11,355 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:22:11,408 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:31:51,351 - DEBUG - root - AI evaluation started
-2026-02-23 17:33:37,822 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:33:37,867 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:34:44,632 - DEBUG - root - AI evaluation started
-2026-02-23 17:35:49,409 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:35:49,413 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:36:25,943 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:36:25,945 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:37:38,529 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:37:38,532 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:40:02,330 - DEBUG - root - AI evaluation started
-2026-02-23 17:42:38,595 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:42:38,598 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:44:38,644 - DEBUG - root - AI evaluation started
-2026-02-23 17:45:25,129 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:45:25,151 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:47:12,337 - DEBUG - root - AI evaluation started
-2026-02-23 17:47:24,006 - DEBUG - root - Result: {result} 
-2026-02-23 17:48:01,787 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:48:01,799 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:48:56,765 - DEBUG - root - AI evaluation started
-2026-02-23 17:49:12,168 - DEBUG - root - Result: score=0.0 feedback='short explanation' 
-2026-02-23 17:51:41,498 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:51:41,523 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:52:20,916 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:52:20,918 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:53:08,627 - DEBUG - root - AI evaluation started
-2026-02-23 17:53:08,632 - ERROR - root - Grading failed: 'Input to PromptTemplate is missing variables {\'"score"\'}.  Expected: [\'"score"\', \'model_answer\', \'student_answer\'] Received: [\'model_answer\', \'student_answer\']\nNote: if you intended {"score"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"score"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
-2026-02-23 17:54:15,826 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:54:15,827 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:55:01,127 - DEBUG - httpcore.connection - close.started
-2026-02-23 17:55:01,128 - DEBUG - httpcore.connection - close.complete
-2026-02-23 17:56:09,240 - DEBUG - root - AI evaluation started
-2026-02-23 17:56:36,489 - DEBUG - root - Result: score=0.0 feedback='short explanation' 
-2026-02-23 18:32:46,637 - DEBUG - root - AI evaluation started
+2026-02-24 16:37:20,616 - DEBUG - root - AI evaluation started
+2026-02-24 16:37:20,878 - DEBUG - groq._base_client - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-3e7eaa1b-0939-4678-9920-526a8a0878cb', 'json_data': {'messages': [{'role': 'system', 'content': 'You are a strict exam evaluator.'}, {'role': 'user', 'content': '\nYou are a strict automated grading system.\n\nCompare the student answer with the model answer carefully.\n\nScoring rules:\n- 1 = logically correct and matches model answer\n- 0 = incorrect or missing key concepts\n\nReturn ONLY valid JSON in this exact format:\n{"score": 0, "feedback": "short explanation"}\n\nModel Answer:\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1))\n\nStudent Answer:\ndef fact(s):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1))\n'}], 'model': 'openai/gpt-oss-120b', 'max_completion_tokens': 500, 'temperature': 0.2, 'top_p': 1}}
+2026-02-24 16:37:21,090 - DEBUG - groq._base_client - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-02-24 16:37:21,092 - DEBUG - httpcore.connection - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:37:21,169 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021813A55090>
+2026-02-24 16:37:21,170 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002180F7F4690> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:37:21,212 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000218139A5F30>
+2026-02-24 16:37:21,213 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:37:21,214 - DEBUG - httpcore.http11 - send_request_headers.complete
+2026-02-24 16:37:21,215 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:37:21,217 - DEBUG - httpcore.http11 - send_request_body.complete
+2026-02-24 16:37:21,217 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:37:21,769 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:07:19 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'8000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'7788'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'1.589s'), (b'x-request-id', b'req_01kj7na0y8ffash4xg966fe9hg'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'set-cookie', b'__cf_bm=Zcz2XLlgSWVtYBvTfLD8yPxA3Wbl6ceoOhLFG4mF1Q4-1771931239.3102338-1.0.1.1-oU1tILGh.rwbc.Pc2VhpYJ.qEMqXEOleTsbxXGaW8Bi7gWQZiO_aWoB2DiEDs05SLqtVLzCi_IFMoQWeWJ1hdK1nfAKQG7mBpY60KohGOp0jnLn5_lpVQROeHlfqfPnK; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Tue, 24 Feb 2026 11:37:19 GMT'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e7fa5a95bca8c-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:37:21,772 - INFO - httpx - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:37:21,773 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:37:21,775 - DEBUG - httpcore.http11 - receive_response_body.complete
+2026-02-24 16:37:21,776 - DEBUG - httpcore.http11 - response_closed.started
+2026-02-24 16:37:21,777 - DEBUG - httpcore.http11 - response_closed.complete
+2026-02-24 16:37:21,779 - DEBUG - groq._base_client - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 24 Feb 2026 11:07:19 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'server': 'cloudflare', 'vary': 'Origin', 'x-groq-region': 'bom', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '8000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '7788', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '1.589s', 'x-request-id': 'req_01kj7na0y8ffash4xg966fe9hg', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'set-cookie': '__cf_bm=Zcz2XLlgSWVtYBvTfLD8yPxA3Wbl6ceoOhLFG4mF1Q4-1771931239.3102338-1.0.1.1-oU1tILGh.rwbc.Pc2VhpYJ.qEMqXEOleTsbxXGaW8Bi7gWQZiO_aWoB2DiEDs05SLqtVLzCi_IFMoQWeWJ1hdK1nfAKQG7mBpY60KohGOp0jnLn5_lpVQROeHlfqfPnK; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Tue, 24 Feb 2026 11:37:19 GMT', 'strict-transport-security': 'max-age=15552000', 'content-encoding': 'gzip', 'cf-ray': '9d2e7fa5a95bca8c-MAA', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-02-24 16:37:21,834 - DEBUG - root - Result: {'score': 0, 'feedback': 'Uses wrong function name and variable; does not match the correct factorial implementation.'} 
+2026-02-24 16:37:22,235 - ERROR - app - AttributeError at E:\Backend developer\fastpisetup\app\routes\user\user_routes\v2\exam_routes.py:131 : 'dict' object has no attribute 'score'
+2026-02-24 16:39:50,341 - DEBUG - httpcore.connection - close.started
+2026-02-24 16:39:50,344 - DEBUG - httpcore.connection - close.complete
+2026-02-24 16:41:58,722 - DEBUG - root - AI evaluation started
+2026-02-24 16:41:58,976 - DEBUG - groq._base_client - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-2110b77e-c1c4-4826-83c5-68c59e80a357', 'json_data': {'messages': [{'role': 'system', 'content': 'You are a strict exam evaluator.'}, {'role': 'user', 'content': '\nYou are a strict automated grading system.\n\nCompare the student answer with the model answer carefully.\n\nScoring rules:\n- 1 = logically correct and matches model answer\n- 0 = incorrect or missing key concepts\n\nReturn ONLY valid JSON in this exact format:\n{"score": 0, "feedback": "short explanation"}\n\nModel Answer:\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1))\n\nStudent Answer:\ndef fact(s):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1))\n'}], 'model': 'openai/gpt-oss-120b', 'max_completion_tokens': 500, 'temperature': 0.2, 'top_p': 1}}
+2026-02-24 16:41:59,449 - DEBUG - groq._base_client - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-02-24 16:41:59,450 - DEBUG - httpcore.connection - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:42:00,000 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F938A9950>
+2026-02-24 16:42:00,001 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000023F8F844690> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:42:00,265 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F93805480>
+2026-02-24 16:42:00,266 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:42:00,268 - DEBUG - httpcore.http11 - send_request_headers.complete
+2026-02-24 16:42:00,269 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:42:00,270 - DEBUG - httpcore.http11 - send_request_body.complete
+2026-02-24 16:42:00,271 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:42:01,095 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:11:59 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'8000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'7788'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'1.589s'), (b'x-request-id', b'req_01kj7njhe0e1d989z7mz1me580'), (b'set-cookie', b'__cf_bm=PZZpRdWWK3tB8cWNjZiqpa4s2KRkL8LbcnO2lsiQRNE-1771931518.366751-1.0.1.1-Lwp2J8w9CbeYobqvcxF.MwhL7wXLrUG0JAxMIrqkkYqN_MRKVpwQDhZ2dJX9wZBRgpMCToDVHGNCnAS831FYjdl5x_umxxbj5WdzsRKI2MfuyuLI2C3oG19XZIqVV8RX; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Tue, 24 Feb 2026 11:41:59 GMT'), (b'via', b'1.1 google'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e8675cec5a920-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:42:01,099 - INFO - httpx - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:42:01,101 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:42:01,103 - DEBUG - httpcore.http11 - receive_response_body.complete
+2026-02-24 16:42:01,104 - DEBUG - httpcore.http11 - response_closed.started
+2026-02-24 16:42:01,104 - DEBUG - httpcore.http11 - response_closed.complete
+2026-02-24 16:42:01,105 - DEBUG - groq._base_client - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 24 Feb 2026 11:11:59 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'server': 'cloudflare', 'vary': 'Origin', 'x-groq-region': 'bom', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '8000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '7788', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '1.589s', 'x-request-id': 'req_01kj7njhe0e1d989z7mz1me580', 'set-cookie': '__cf_bm=PZZpRdWWK3tB8cWNjZiqpa4s2KRkL8LbcnO2lsiQRNE-1771931518.366751-1.0.1.1-Lwp2J8w9CbeYobqvcxF.MwhL7wXLrUG0JAxMIrqkkYqN_MRKVpwQDhZ2dJX9wZBRgpMCToDVHGNCnAS831FYjdl5x_umxxbj5WdzsRKI2MfuyuLI2C3oG19XZIqVV8RX; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Tue, 24 Feb 2026 11:41:59 GMT', 'via': '1.1 google', 'strict-transport-security': 'max-age=15552000', 'cf-cache-status': 'DYNAMIC', 'content-encoding': 'gzip', 'cf-ray': '9d2e8675cec5a920-MAA', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-02-24 16:42:01,182 - DEBUG - root - Result: {'score': 0, 'feedback': 'The student code uses the wrong function name and variable names (s vs n) and calls an undefined function, so it does not correctly implement the factorial logic.'} 
+2026-02-24 16:43:17,276 - DEBUG - root - AI evaluation started
+2026-02-24 16:43:17,280 - DEBUG - groq._base_client - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-586bcfba-d30d-4592-a5ba-430fcbd5ff14', 'json_data': {'messages': [{'role': 'system', 'content': 'You are a strict exam evaluator.'}, {'role': 'user', 'content': '\nYou are a strict automated grading system.\n\nCompare the student answer with the model answer carefully.\n\nScoring rules:\n- 1 = logically correct and matches model answer\n- 0 = incorrect or missing key concepts\n\nReturn ONLY valid JSON in this exact format:\n{"score": 0, "feedback": "short explanation"}\n\nModel Answer:\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1))\n\nStudent Answer:\ndef fact(s):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1))\n'}], 'model': 'openai/gpt-oss-120b', 'max_completion_tokens': 500, 'temperature': 0.2, 'top_p': 1}}
+2026-02-24 16:43:17,283 - DEBUG - groq._base_client - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-02-24 16:43:17,284 - DEBUG - httpcore.connection - close.started
+2026-02-24 16:43:17,293 - DEBUG - httpcore.connection - close.complete
+2026-02-24 16:43:17,295 - DEBUG - httpcore.connection - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:43:18,093 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F938069E0>
+2026-02-24 16:43:18,094 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000023F8F844690> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:43:18,304 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F938BF1D0>
+2026-02-24 16:43:18,306 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:43:18,308 - DEBUG - httpcore.http11 - send_request_headers.complete
+2026-02-24 16:43:18,309 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:43:18,310 - DEBUG - httpcore.http11 - send_request_body.complete
+2026-02-24 16:43:18,312 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:43:19,119 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:13:17 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'8000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'7788'), (b'x-ratelimit-reset-requests', b'2m52.8s'), (b'x-ratelimit-reset-tokens', b'1.589s'), (b'x-request-id', b'req_01kj7nmxnbe48sxdzygb0k2dna'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e885d8a0074f4-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:43:19,121 - INFO - httpx - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:43:19,122 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:43:19,124 - DEBUG - httpcore.http11 - receive_response_body.complete
+2026-02-24 16:43:19,125 - DEBUG - httpcore.http11 - response_closed.started
+2026-02-24 16:43:19,125 - DEBUG - httpcore.http11 - response_closed.complete
+2026-02-24 16:43:19,126 - DEBUG - groq._base_client - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 24 Feb 2026 11:13:17 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'server': 'cloudflare', 'vary': 'Origin', 'x-groq-region': 'bom', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '8000', 'x-ratelimit-remaining-requests': '998', 'x-ratelimit-remaining-tokens': '7788', 'x-ratelimit-reset-requests': '2m52.8s', 'x-ratelimit-reset-tokens': '1.589s', 'x-request-id': 'req_01kj7nmxnbe48sxdzygb0k2dna', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'strict-transport-security': 'max-age=15552000', 'content-encoding': 'gzip', 'cf-ray': '9d2e885d8a0074f4-MAA', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-02-24 16:43:19,130 - DEBUG - root - Result: {'score': 0, 'feedback': 'The answer uses the wrong function name and variable names (s vs n) and calls an undefined function, so it does not match the correct factorial implementation.'} 
+2026-02-24 16:43:53,115 - DEBUG - httpcore.connection - close.started
+2026-02-24 16:43:53,116 - DEBUG - httpcore.connection - close.complete

@@ -1,0 +1,73 @@
+2026-02-23 13:05:20,684 - DEBUG - httpcore.connection - close.started
+2026-02-23 13:05:20,688 - DEBUG - httpcore.connection - close.complete
+2026-02-23 13:07:51,437 - ERROR - app - InvalidId at E:\Backend developer\fastpisetup\.venv\Lib\site-packages\bson\objectid.py:37 : 'string' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2026-02-23 13:09:59,412 - ERROR - app - KeyError at E:\Backend developer\fastpisetup\app\routes\user\user_routes\v2\exam_routes.py:57 : 'id'
+2026-02-23 13:10:18,159 - DEBUG - httpcore.connection - close.started
+2026-02-23 13:10:18,166 - DEBUG - httpcore.connection - close.complete
+2026-02-23 13:10:40,352 - DEBUG - httpcore.connection - close.started
+2026-02-23 13:10:40,353 - DEBUG - httpcore.connection - close.complete
+2026-02-23 13:12:50,503 - DEBUG - httpcore.connection - close.started
+2026-02-23 13:12:50,505 - DEBUG - httpcore.connection - close.complete
+2026-02-23 14:05:14,984 - ERROR - app - KeyError at E:\Backend developer\fastpisetup\app\routes\user\user_routes\v2\exam_routes.py:119 : 'Model_answer'
+2026-02-23 14:08:12,533 - DEBUG - httpcore.connection - close.started
+2026-02-23 14:08:12,535 - DEBUG - httpcore.connection - close.complete
+2026-02-23 14:09:01,916 - ERROR - app - ValueError at E:\Backend developer\fastpisetup\.venv\Lib\site-packages\fastapi\encoders.py:335 : [TypeError("'numpy.float32' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+2026-02-23 14:09:17,901 - DEBUG - httpcore.connection - close.started
+2026-02-23 14:09:17,903 - DEBUG - httpcore.connection - close.complete
+2026-02-23 14:24:46,394 - DEBUG - httpcore.connection - close.started
+2026-02-23 14:24:46,413 - DEBUG - httpcore.connection - close.complete
+2026-02-23 15:21:37,477 - DEBUG - root - AI evaluation started
+2026-02-23 15:23:21,642 - ERROR - app - OutputParserException at E:\Backend developer\fastpisetup\.venv\Lib\site-packages\langchain_core\output_parsers\pydantic.py:35 : Failed to parse GradeOutput from completion null. Got: 1 validation error for GradeOutput
+  Input should be a valid dictionary or instance of GradeOutput [type=model_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE 
+2026-02-23 15:27:45,717 - DEBUG - httpcore.connection - close.started
+2026-02-23 15:27:45,758 - DEBUG - httpcore.connection - close.complete
+2026-02-23 16:37:50,464 - DEBUG - httpcore.connection - close.started
+2026-02-23 16:37:50,498 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:01:25,615 - ERROR - app - UnboundLocalError at E:\Backend developer\fastpisetup\app\routes\user\user_routes\v2\exam_routes.py:143 : cannot access local variable 'feedback' where it is not associated with a value
+2026-02-23 17:03:25,995 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:03:25,997 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:08:00,008 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:08:00,009 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:09:35,410 - ERROR - app - UnboundLocalError at E:\Backend developer\fastpisetup\app\routes\user\user_routes\v2\exam_routes.py:143 : cannot access local variable 'feedback' where it is not associated with a value
+2026-02-23 17:11:28,415 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:11:28,420 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:12:41,270 - DEBUG - root - AI evaluation started
+2026-02-23 17:22:11,355 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:22:11,408 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:31:51,351 - DEBUG - root - AI evaluation started
+2026-02-23 17:33:37,822 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:33:37,867 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:34:44,632 - DEBUG - root - AI evaluation started
+2026-02-23 17:35:49,409 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:35:49,413 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:36:25,943 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:36:25,945 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:37:38,529 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:37:38,532 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:40:02,330 - DEBUG - root - AI evaluation started
+2026-02-23 17:42:38,595 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:42:38,598 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:44:38,644 - DEBUG - root - AI evaluation started
+2026-02-23 17:45:25,129 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:45:25,151 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:47:12,337 - DEBUG - root - AI evaluation started
+2026-02-23 17:47:24,006 - DEBUG - root - Result: {result} 
+2026-02-23 17:48:01,787 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:48:01,799 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:48:56,765 - DEBUG - root - AI evaluation started
+2026-02-23 17:49:12,168 - DEBUG - root - Result: score=0.0 feedback='short explanation' 
+2026-02-23 17:51:41,498 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:51:41,523 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:52:20,916 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:52:20,918 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:53:08,627 - DEBUG - root - AI evaluation started
+2026-02-23 17:53:08,632 - ERROR - root - Grading failed: 'Input to PromptTemplate is missing variables {\'"score"\'}.  Expected: [\'"score"\', \'model_answer\', \'student_answer\'] Received: [\'model_answer\', \'student_answer\']\nNote: if you intended {"score"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"score"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-23 17:54:15,826 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:54:15,827 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:55:01,127 - DEBUG - httpcore.connection - close.started
+2026-02-23 17:55:01,128 - DEBUG - httpcore.connection - close.complete
+2026-02-23 17:56:09,240 - DEBUG - root - AI evaluation started
+2026-02-23 17:56:36,489 - DEBUG - root - Result: score=0.0 feedback='short explanation' 
+2026-02-23 18:32:46,637 - DEBUG - root - AI evaluation started
