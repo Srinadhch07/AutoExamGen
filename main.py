@@ -7,10 +7,10 @@ import asyncio
 
 from app.utils.response_handler import ( global_exception_handler, http_exception_handler, validation_exception_handler)
 from app.routes.user.user_routes.v1.routes import router as pdf_router
-from app.routes.user.user_routes.v2.exam_routes import router as exam_router
+# from app.routes.user.user_routes.v2.exam_routes import router as exam_router
 from app.config.database import check_connection
 from app.config.logging import init_logging_system
-from app.transformers.v1 import embeddings
+# from app.transformers.v1 import embeddings
 
 init_logging_system()
 
@@ -23,7 +23,7 @@ app.add_exception_handler(RequestValidationError, validation_exception_handler)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.include_router( pdf_router, prefix="/api", tags=["PDF"])
-app.include_router( exam_router, prefix="/api", tags=["Exam APIs"])
+# app.include_router( exam_router, prefix="/api", tags=["Exam APIs"])
 
 @app.on_event("startup")
 async def startup_event():

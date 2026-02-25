@@ -25,4 +25,5 @@ celery.conf.update(
     broker_pool_limit=1,
     task_track_started=True,
     task_send_sent_event=True,
+    result_expires = 3600
 )

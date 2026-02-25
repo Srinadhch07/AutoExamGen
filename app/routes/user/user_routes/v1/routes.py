@@ -1,16 +1,42 @@
-from fastapi import APIRouter, HTTPException
-from app.tasks.pdf_tasks import generate_pdf_task
+from fastapi import APIRouter, HTTPException, UploadFile, File, Form, HTTPException
+from app.tasks.pdf_tasks import generate_pdf_task, analyse_pdf_task
 from celery.result import AsyncResult
 from app.config.celery_app import celery
 from app.schemas.pdf_schema import PDFGenerate
+import os
+import uuid
+import shutil
 router = APIRouter()
+import logging
+
+logger = logging.getLogger(__name__)
+
+UPLOAD_DIR = "uploads"
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+@router.post("/analyze-doc",status_code=202)
+async def analyse_doc(userId: str = Form(...), file: UploadFile = File(...)):
+    if userId is None:
+        raise HTTPException(status_code = 400, detail="Missing required details.")
+    if file.content_type != "application/pdf":
+        raise HTTPException(status_code = 400, detail="Only PDFs are allowed")
+    
+    file_id = f'{uuid.uuid4()}_{file.filename}'
+    file_path = os.path.join(UPLOAD_DIR, file_id)
+    payload = {"path": file_path}
+
+    with open(file_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+    logger.debug("Pdf task started")
+    task = analyse_pdf_task.apply_async(args=[payload], countdown=10)
+    logger.debug("Pdf Task finished")
+    return { "status": True, "message": "PDF Uploaded", "data": { "task_id": task.id, "status":"processing" }}
 
 @router.post("/generate-pdf", status_code=202)
 async def generate_pdf_api(payload: PDFGenerate):
-    print("TASK FILE CELERY:", celery.conf.broker_url)
     if not payload or not payload.name:
         raise HTTPException(400, "Missing required details")
-    task = generate_pdf_task.apply_async(args=[payload.dict()], countdown=60)
+    task = generate_pdf_task.apply_async(args=[payload.dict()], countdown=60)   
     return { "status": True, "message": "PDF generation queued", "data": { "task_id": task.id}}
 
 @router.get("/task-status/{task_id}")

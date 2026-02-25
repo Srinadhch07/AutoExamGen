@@ -1,5 +1,13 @@
 from groq import Groq
 import json
+import os
+from dotenv import load_dotenv
+import logging
+ 
+from app.agents.v2.prompts.ats_analyzer_prompts import SYSTEM_PROMPT
+
+load_dotenv()
+logger = logging.getLogger(__name__)
 
 client = Groq()
 
@@ -44,4 +52,30 @@ async def evaluate_answer(model_answer, student_answer):
         return {
             "score": 0,
             "feedback": "Invalid response format from model"
+        }
+
+async def ats_evaluator(USER_PROMPT):
+    completion = client.chat.completions.create(
+        model="openai/gpt-oss-120b",
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT}
+        ],
+        temperature=0.2,
+        max_completion_tokens=2000,
+    )
+    response = completion.choices[0].message.content.strip()
+    try:
+        result = json.loads(response)
+        return result
+    except json.JSONDecodeError as e:
+        logger.error("ATS evaluation JSON error: %s", e)
+        logger.error("RAW RESPONSE:\n%s", response)
+
+        return {
+            "status": "error",
+            "error_type": "INVALID_JSON",
+            "message": "Model returned malformed JSON",
+            "error": str(e),
+            "raw_preview": response[:500]
         }

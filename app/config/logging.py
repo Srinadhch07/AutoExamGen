@@ -18,6 +18,8 @@ def init_logging_system():
     logger.setLevel(getattr(logging, LOG_LEVEL))
     
     # Get only warnings
+    logging.getLogger("python_multipart").setLevel(logging.WARNING)
+    logging.getLogger("celery").setLevel(logging.WARNING)
     logging.getLogger("pymongo").setLevel(logging.WARNING)
     logging.getLogger("urllib3").setLevel(logging.WARNING)
 
