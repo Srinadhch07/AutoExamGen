@@ -20,7 +20,7 @@ Scoring:
 - 0 = incorrect or incomplete
 
 Model Answer:
-{model_answer}
+{model_answer}  
 
 Student Answer:
 {student_answer}

@@ -1,0 +1,4 @@
+Tool is built on C language
+using in python for generating pdfs using html pages.
+
+python package name: weasyprint

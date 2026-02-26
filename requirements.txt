@@ -11,15 +11,19 @@ pymongo
 motor[srv]>=3.6.0
 sentence-transformers 
 numpy
-groq
 python-multipart
 pymupdf
+pydantic[email]
+jinja2
+weasyprint
+sentencepiece
+transformers
+pydantic
+langchain-community
+
 # Temp
 langchain-openai
 ollama
-transformers
-sentencepiece
 llama-cpp-python 
-pydantic
-langchain-community
+groq
 

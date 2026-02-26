@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        /* ================= PAGE SETTINGS ================= */
+        @page {
+            size: A4;
+            margin: 1in;
+
+            @bottom-center {
+                content: "Page " counter(page) " of " counter(pages);
+                font-size: 10px;
+                color: #555;
+            }
+        }
+
+        /* ================= GLOBAL ================= */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        h2 {
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 3px;
+            page-break-after: avoid;
+        }
+
+        h3 {
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        p {
+            margin: 4px 0;
+        }
+
+        ul {
+            margin-top: 5px;
+            padding-left: 18px;
+        }
+
+        li {
+            margin-bottom: 4px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .section {
+            page-break-inside: avoid;
+        }
+
+        .meta {
+            font-size: 11px;
+            color: #444;
+        }
+
+        .contact-line {
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <h1>{{ resume.personal_info.full_name }}</h1>
+
+    <div class="contact-line">
+        {% if resume.personal_info.email %}{{ resume.personal_info.email }}{% endif %}
+        {% if resume.personal_info.phone %} | {{ resume.personal_info.phone }}{% endif %}
+        {% if resume.personal_info.location %} | {{ resume.personal_info.location }}{% endif %}
+        {% if resume.personal_info.linkedin %} | {{ resume.personal_info.linkedin }}{% endif %}
+        {% if resume.personal_info.website %} | {{ resume.personal_info.website }}{% endif %}
+    </div>
+
+    {% if resume.personal_info.headline %}
+    <p><strong>{{ resume.personal_info.headline }}</strong></p>
+    {% endif %}
+
+
+    <!-- ================= PROFESSIONAL SUMMARY ================= -->
+    {% if resume.professional_summary %}
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>{{ resume.professional_summary }}</p>
+    </div>
+    {% endif %}
+
+
+    <!-- ================= CORE COMPETENCIES ================= -->
+    {% if resume.core_competencies and resume.core_competencies|length > 0 %}
+    <div class="section">
+        <h2>Core Competencies</h2>
+        <p>{{ resume.core_competencies | join(", ") }}</p>
+    </div>
+    {% endif %}
+
+
+    <!-- ================= WORK EXPERIENCE ================= -->
+    {% set valid_jobs = [] %}
+    {% for job in resume.work_experience or [] %}
+    {% if job.job_title or job.organization or job.description %}
+    {% set _ = valid_jobs.append(job) %}
+    {% endif %}
+    {% endfor %}
+
+    {% if valid_jobs|length > 0 %}
+    <div class="section">
+        <h2>Work Experience</h2>
+
+        {% for job in valid_jobs %}
+        <div style="margin-bottom:10px;">
+            <h3>
+                {{ job.job_title }}
+                {% if job.organization %} – {{ job.organization }}{% endif %}
+            </h3>
+
+            <div class="meta">
+                {% if job.start_date %}{{ job.start_date }}{% endif %}
+                {% if job.end_date %} – {{ job.end_date }}{% else %} – Present{% endif %}
+                {% if job.location %} | {{ job.location }}{% endif %}
+                {% if job.employment_type %} | {{ job.employment_type }}{% endif %}
+            </div>
+
+            {% if job.description and job.description|length > 0 %}
+            <ul>
+                {% for point in job.description %}
+                <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+    <!-- ================= PROJECTS ================= -->
+    {% set valid_projects = [] %}
+    {% for project in resume.projects or [] %}
+    {% if project.title or project.description %}
+    {% set _ = valid_projects.append(project) %}
+    {% endif %}
+    {% endfor %}
+
+    {% if valid_projects|length > 0 %}
+    <div class="section">
+        <h2>Projects</h2>
+
+        {% for project in valid_projects %}
+        <div style="margin-bottom:10px;">
+            <h3>{{ project.title }}</h3>
+
+            <div class="meta">
+                {% if project.organization %}{{ project.organization }} | {% endif %}
+                {% if project.start_date %}{{ project.start_date }}{% endif %}
+                {% if project.end_date %} – {{ project.end_date }}{% else %} – Present{% endif %}
+            </div>
+
+            {% if project.description and project.description|length > 0 %}
+            <ul>
+                {% for point in project.description %}
+                <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if project.link %}
+            <p class="meta">{{ project.link }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+    <!-- ================= EDUCATION ================= -->
+    {% set valid_education = [] %}
+    {% for edu in resume.education or [] %}
+    {% if edu.qualification or edu.institution %}
+    {% set _ = valid_education.append(edu) %}
+    {% endif %}
+    {% endfor %}
+
+    {% if valid_education|length > 0 %}
+    <div class="section">
+        <h2>Education</h2>
+
+        {% for edu in valid_education %}
+        <div style="margin-bottom:8px;">
+            <h3>
+                {{ edu.qualification }}
+                {% if edu.field_of_study %}, {{ edu.field_of_study }}{% endif %}
+            </h3>
+
+            <div class="meta">
+                {{ edu.institution }}
+                {% if edu.location %} | {{ edu.location }}{% endif %}
+                {% if edu.start_year %} | {{ edu.start_year }}{% endif %}
+                {% if edu.end_year %} – {{ edu.end_year }}{% endif %}
+                {% if edu.grade %} | {{ edu.grade }}{% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+    <!-- ================= SKILLS ================= -->
+    {% if resume.skills and (
+    resume.skills.technical or
+    resume.skills.soft or
+    resume.skills.other or
+    resume.skills.languages) %}
+    <div class="section">
+        <h2>Skills</h2>
+
+        {% if resume.skills.technical %}
+        <p><strong>Technical:</strong> {{ resume.skills.technical | join(", ") }}</p>
+        {% endif %}
+
+        {% if resume.skills.soft %}
+        <p><strong>Soft Skills:</strong> {{ resume.skills.soft | join(", ") }}</p>
+        {% endif %}
+
+        {% if resume.skills.other %}
+        <p><strong>Other:</strong> {{ resume.skills.other | join(", ") }}</p>
+        {% endif %}
+
+        {% if resume.skills.languages %}
+        <p><strong>Languages:</strong>
+            {% for lang in resume.skills.languages %}
+            {{ lang.language }} ({{ lang.proficiency }}){% if not loop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+        {% endif %}
+
+    </div>
+    {% endif %}
+
+
+    <!-- ================= CERTIFICATIONS ================= -->
+    {% if resume.certifications and resume.certifications|length > 0 %}
+    <div class="section">
+        <h2>Certifications</h2>
+        <ul>
+            {% for cert in resume.certifications %}
+            <li>
+                {{ cert.title }} – {{ cert.issuing_organization }}
+                {% if cert.issue_date %} ({{ cert.issue_date }}){% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+
+    <!-- ================= AWARDS ================= -->
+    {% if resume.awards and resume.awards|length > 0 %}
+    <div class="section">
+        <h2>Awards</h2>
+        <ul>
+            {% for award in resume.awards %}
+            <li>
+                {{ award.title }} – {{ award.issuer }}
+                {% if award.date %} ({{ award.date }}){% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+
+    <!-- ================= VOLUNTEER EXPERIENCE ================= -->
+    {% set valid_volunteer = [] %}
+    {% for vol in resume.volunteer_experience or [] %}
+    {% if vol.role or vol.organization %}
+    {% set _ = valid_volunteer.append(vol) %}
+    {% endif %}
+    {% endfor %}
+
+    {% if valid_volunteer|length > 0 %}
+    <div class="section">
+        <h2>Volunteer Experience</h2>
+
+        {% for vol in valid_volunteer %}
+        <div style="margin-bottom:8px;">
+            <strong>{{ vol.role }}</strong> – {{ vol.organization }}
+            {% if vol.start_date %} ({{ vol.start_date }}{% endif %}
+            {% if vol.end_date %} – {{ vol.end_date }}){% else %} – Present){% endif %}
+        </div>
+        {% endfor %}
+
+    </div>
+    {% endif %}
+
+</body>
+
+</html>

@@ -40,3 +40,346 @@ Database architecture:
   "created_at": ISODate(),
   "version": 1
 }
+Resume Form architecture
+------------------------
+{
+  "personal_info": {
+    "full_name": "SRINADH CHINTAKINDI",
+    "headline": "Jr.Backend Developer | AI Enthusiast",
+    "email": "srinadhch03@gmail.com",
+    "phone": "+91-9346070083"
+    "location": "Hyderabad, India",
+    "linkedin": "https://www.linkedin.com/in/srinadhch07/",
+    "website": "https://github.com/Srinadhch07"
+  },
+
+  "professional_summary": "Computer Science undergraduate with hands-on experience in building scalable REST APIs and AI-based document processing systems. Strong foundation in data structures, backend development, and asynchronous task management. Passionate about designing production-ready backend architectures.",
+
+  "core_competencies": [
+    "Backend Development",
+    "REST API Design",
+    "Data Structures & Algorithms",
+    "Machine learning",
+    "Large language models",
+    "Deep learning",
+    "Transformers",
+    "Problem Solving",
+    "Agile Development"
+  ],
+
+  "work_experience": [
+    {
+      "job_title": "Jr.Backend Developer",
+      "organization": "Analouge IT Solutions",
+      "location": "On-site",
+      "employment_type": "Internship",
+      "start_date": "2025-08-11",
+      "end_date": "2026-02-21",
+      "description": [
+        "Developed REST APIs using FastAPI for document processing workflows.",
+        "Integrated MongoDB for structured resume data storage.",
+        "Implemented asynchronous task processing using Celery and Redis.",
+        "Reduced API response latency by 40% through query optimization."
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "qualification": "Bachelor of Technology",
+      "field_of_study": "Computer Science and Engineering",
+      "institution": "Christu Jyothi Institute of technology.",
+      "location": "Jangaon,Telangana, India",
+      "start_year": "2021",
+      "end_year": "2025",
+      "grade": "8.6 CGPA"
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "AI-Based Resume Analyzer",
+      "organization": "Analouge IT solution",
+      "start_date": "2025-01-12",
+      "end_date": "2025-03-12",
+      "description": [
+        "Built a resume analysis system using NLP techniques to evaluate ATS compatibility.",
+        "Designed modular backend architecture using FastAPI.",
+        "Generated automated PDF reports with scoring breakdown.",
+        "Implemented background processing for large document uploads."
+      ],
+      "link": "https://github.com/arjunmehta/resume-analyzer"
+    },
+    {
+      "title": "Employee Identification System",
+      "organization": "Personal Project",
+      "start_date": "2024-10-12",
+      "end_date": "2024-12-12",
+      "description": [
+        "Developed QR-based employee verification system using Flask.",
+        "Integrated MongoDB for secure employee data storage.",
+        "Designed admin dashboard for managing employee records."
+      ],
+      "link": "https://github.com/arjunmehta/employee-system"
+    }
+  ],
+
+  "certifications": [
+    {
+      "title": "AI Fundamentals",
+      "issuing_organization": "Qualcomm Academy",
+      "issue_date": "2025-02-12",
+      "expiry_date": "2026-02-12",
+      "credential_id": "QAI-2025-001"
+    }
+  ],
+
+  "publications": [],
+
+  "awards": [
+    {
+      "title": "Top Performer - Hackathon 2024",
+      "issuer": "University Tech Fest",
+      "date": null
+    }
+  ],
+
+  "volunteer_experience": [
+    {
+      "role": "Technical Coordinator",
+      "organization": "Coding Club JNTU",
+      "start_date": "2023-08-12",
+      "end_date": "2024-05-12",
+      "description": [
+        "Organized coding competitions and technical workshops.",
+        "Mentored 50+ students in data structures and backend development."
+      ]
+    }
+  ],
+
+  "skills": {
+    "technical": [
+      "Python",
+      "FastAPI",
+      "Flask",
+      "MongoDB",
+      "MySQL",
+      "Celery",
+      "Redis",
+      "Git",
+      "Docker",
+      "REST APIs"
+    ],
+    "soft": [
+      "Communication",
+      "Team Collaboration",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiency": "Fluent"
+      },
+      {
+        "language": "Hindi",
+        "proficiency": "Native"
+      }
+    ],
+    "other": [
+      "Competitive Programming",
+      "Technical Writing"
+    ]
+  },
+
+  "additional_information": {
+    "interests": [
+      "Artificial Intelligence",
+      "System Design",
+      "Open Source Contribution"
+    ],
+    "references": "Available upon request"
+  }
+}
+
+{
+  "personal_info": {
+    "full_name": "SRINADH CHINTAKINDI",
+    "headline": "Jr. Backend Developer | AI Enthusiast",
+    "email": "srinadhch03@gmail.com",
+    "phone": "+91-9346070083",
+    "location": "Hyderabad, India",
+    "linkedin": "https://www.linkedin.com/in/srinadhch07/", 
+    "website": "https://github.com/Srinadhch07"
+  },
+
+  "professional_summary": "Computer Science undergraduate, currently working as Jr. Backend Developer and AI Analyst with experience building REST APIs and AI-based analytic systems. Strong foundational skills in backend systems, asynchronous processing, and scalable architectures. Actively learning and applying machine learning, MLOps, and large language models. Passionate about problem solving and production-ready backend solutions.",
+
+  "core_competencies": [
+    "Backend Development",
+    "REST API Design",
+    "Data Structures & Algorithms",
+    "Machine Learning",
+    "Large Language Models",
+    "Deep Learning",
+    "Transformers",
+    "Problem Solving",
+    "Agile Development"
+  ],
+
+  "work_experience": [
+    {
+      "job_title": "Jr. Backend Developer",
+      "organization": "Analouge IT Solutions",
+      "location": "On-site",
+      "employment_type": "Internship",
+      "start_date": "2025-08-11",
+      "end_date": "2026-02-21",
+      "description": [
+        "Developed REST APIs using FastAPI for document processing workflows.",
+        "Integrated MongoDB for structured resume data storage.",
+        "Implemented asynchronous task processing using Celery and Redis.",
+        "Reduced API response latency by 40% through query optimization."
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "qualification": "Bachelor of Technology",
+      "field_of_study": "Computer Science and Engineering",
+      "institution": "Christu Jyothi Institute of Technology",
+      "location": "Jangaon, Telangana, India",
+      "start_year": "2021",
+      "end_year": "2025",
+      "grade": "8.6 CGPA"
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "AI-Based Resume Analyzer",
+      "organization": "Analouge IT Solutions",
+      "start_date": "2025-01-12",
+      "end_date": "2025-03-12",
+      "description": [
+        "Built a resume analysis system using NLP techniques to evaluate ATS compatibility.",
+        "Designed modular backend architecture using FastAPI.",
+        "Generated automated PDF reports with scoring breakdown.",
+        "Implemented background processing for large document uploads."
+      ],
+      "link": "https://github.com/Srinadhch07/resume-analyzer"
+    },
+    {
+      "title": "Employee Identification System",
+      "organization": "Personal Project",
+      "start_date": "2024-10-12",
+      "end_date": "2024-12-12",
+      "description": [
+        "Developed QR-based employee verification system using Flask.",
+        "Integrated MongoDB for secure employee data storage.",
+        "Designed admin dashboard for managing employee records."
+      ],
+      "link": "https://github.com/Srinadhch07/employee-system"
+    }
+  ],
+
+  "certifications": [
+    {
+      "title": "AI Fundamentals",
+      "issuing_organization": "Qualcomm Academy",
+      "issue_date": "2025-02-12",
+      "expiry_date": "2026-02-12",
+      "credential_id": "QAI-2025-001"
+    }
+  ],
+
+  "publications": [],
+
+  "awards": [
+    {
+      "title": "Top Performer - Hackathon 2024",
+      "issuer": "University Tech Fest",
+      "date": null
+    }
+  ],
+
+  "volunteer_experience": [
+    {
+      "role": "Technical Coordinator",
+      "organization": "Coding Club JNTU",
+      "start_date": "2023-08-12",
+      "end_date": "2024-05-12",
+      "description": [
+        "Organized coding competitions and technical workshops.",
+        "Mentored 50+ students in data structures and backend development."
+      ]
+    }
+  ],
+
+  "skills": {
+    "technical": [
+      "Python",
+      "FastAPI",
+      "Flask",
+      "MongoDB",
+      "MySQL",
+      "Celery",
+      "Redis",
+      "Git",
+      "Docker",
+      "REST APIs"
+    ],
+    "soft": [
+      "Communication",
+      "Team Collaboration",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiency": "Fluent"
+      },
+      {
+        "language": "Hindi",
+        "proficiency": "Native"
+      }
+    ],
+    "other": [
+      "Competitive Programming",
+      "Technical Writing"
+    ]
+  },
+
+  "additional_information": {
+    "interests": [
+      "Artificial Intelligence",
+      "System Design",
+      "Open Source Contribution"
+    ],
+    "references": "Available upon request"
+  }
+}
+
+Resume Margins:
+--------------
+Professional resume:
+---------------------
+@page {
+    size: A4;
+    margin: 0.7in 0.75in 0.7in 0.75in;
+
+    @bottom-center {
+        content: "Page " counter(page) " of " counter(pages);
+        font-size: 9px;
+        color: #555;
+    }
+}
+
+MAANF Compact version
+---------------------
+@page {
+    size: A4;
+    margin: 0.6in 0.65in;
+}

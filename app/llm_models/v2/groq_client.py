@@ -5,6 +5,9 @@ from dotenv import load_dotenv
 import logging
  
 from app.agents.v2.prompts.ats_analyzer_prompts import SYSTEM_PROMPT
+from app.agents.v2.prompts.resume_prompts import SYSTEM_PROMPT as RESUME_SYSTEM_PROMPT
+from app.schemas.v2.resume_schema import ResumeSchema
+from app.helpers.helpers import safe_json_loads
 
 load_dotenv()
 logger = logging.getLogger(__name__)
@@ -79,3 +82,31 @@ async def ats_evaluator(USER_PROMPT):
             "error": str(e),
             "raw_preview": response[:500]
         }
+
+async def resume_generator(USER_PROMPT, original_data=None):
+    completion = client.chat.completions.create(
+        model="openai/gpt-oss-120b",
+        messages = [
+           {"role": "system", "content": RESUME_SYSTEM_PROMPT},
+           {"role": "user", "content": USER_PROMPT}
+        ],
+        temperature = 0.2,
+        max_completion_tokens=2000,
+    )
+    response = None
+    try:
+        response = completion.choices[0].message.content.strip()
+        if not response:
+            raise ValueError("AI response is empty")
+        result = safe_json_loads(response)
+        validated = ResumeSchema(**result)
+        return validated, True
+    except Exception as e:
+        logger.error("Resume Generation is failed: %s",e)
+        logger.error("RAW RESPONSE:\n%s", response)
+        if original_data:
+            logger.warning("Using Original data as fallback")
+            return ResumeSchema(**original_data), False
+        else:
+            raise ValueError("AI Generation failed and No fallback is availabale")
+

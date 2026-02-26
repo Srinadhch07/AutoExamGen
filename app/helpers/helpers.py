@@ -5,6 +5,11 @@ from datetime import datetime, timedelta, timezone
 from fastapi import HTTPException
 import json, ast
 import random
+import logging
+import re
+from uuid import uuid4
+
+logger = logging.getLogger(__name__)
 
 def generate_random_text():
     chars = "abcdefghijklmnopqrstyouvxyz1234567890"
@@ -26,19 +31,23 @@ def convert_objectids(obj):
     else:
         return obj
 
-def safe_json_loads(s):
-    try:
-        if isinstance(s, dict):
-            return s
-        return json.loads(s)
+def safe_json_loads(s: str) -> dict:
 
-    except json.JSONDecodeError:
-        try:
-           
-            return ast.literal_eval(s)
-        except Exception:
-            print(f"Failed to parse JSON: {s}")
-            return {"raw_content": s}
+    if isinstance(s, dict):
+        return s
+    if not isinstance(s, str):
+        raise ValueError("AI response must be string or dict")
+    
+    cleaned = s.strip()
+    if cleaned.startswith("```"):
+        cleaned = cleaned.replace("```json", "").replace("```", "").strip()
+    try:
+        return json.loads(cleaned)
+
+    except json.JSONDecodeError as e:
+        logger.error("Invalid JSON from AI: %s", e)
+        logger.error("RAW RESPONSE:\n%s", s)
+        raise ValueError("AI returned invalid JSON")
 
 def safe_json(data):
     def default(o):
@@ -166,3 +175,10 @@ def get_subscription_status(activated_at, expires_at):
         "is_expired": is_expired,
     }
 
+def generate_safe_filename(text: str) -> str:
+    cleaned = re.sub(r'[^a-zA-Z0-9 ]', '', text)
+    cleaned = cleaned.strip().replace(" ", "_")
+    if not cleaned:
+        cleaned = "Resume"
+    unique_id = uuid4().hex[:6]
+    return f"{cleaned}_{unique_id}"
